@@ -15,4 +15,8 @@ export class LessonService {
     const lesson = await this.lessonRepository.createLesson(createLessonDto);
     return lesson;
   }
+  async getLesson(id: string): Promise<Lesson> {
+    const lesson = await this.lessonRepository.getLesson(id);
+    return lesson;
+  }
 }

@@ -9,4 +9,7 @@ export class LessonRepository extends Repository<Lesson> {
     const lesson = this.create({ id: uuid(), name, startDate, endDate });
     return await this.save(lesson);
   }
+  async getLesson(id: string): Promise<Lesson> {
+    return await this.findOne({ id });
+  }
 }
