@@ -19,4 +19,8 @@ export class LessonService {
     const lesson = await this.lessonRepository.getLesson(id);
     return lesson;
   }
+  async getLessons(): Promise<Lesson[]> {
+    const lessons = await this.lessonRepository.getLessons();
+    return lessons;
+  }
 }

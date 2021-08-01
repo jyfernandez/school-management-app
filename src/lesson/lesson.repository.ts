@@ -12,4 +12,7 @@ export class LessonRepository extends Repository<Lesson> {
   async getLesson(id: string): Promise<Lesson> {
     return await this.findOne({ id });
   }
+  async getLessons(): Promise<Lesson[]> {
+    return await this.find();
+  }
 }
