@@ -22,4 +22,13 @@ export class StudentRepository extends Repository<Student> {
   async getStudent(id: string): Promise<Student> {
     return await this.findOne({ id });
   }
+  async getManyStudents(studentIds: string[]): Promise<Student[]> {
+    return await this.find({
+      where: {
+        id: {
+          $in: studentIds,
+        },
+      },
+    });
+  }
 }

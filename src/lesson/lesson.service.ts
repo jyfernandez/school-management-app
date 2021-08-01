@@ -23,4 +23,14 @@ export class LessonService {
     const lessons = await this.lessonRepository.getLessons();
     return lessons;
   }
+  async assignStudentsToLesson(
+    lessonId: string,
+    studentIds: string[],
+  ): Promise<Lesson> {
+    const lesson = await this.lessonRepository.assignStudentsToLesson(
+      lessonId,
+      studentIds,
+    );
+    return lesson;
+  }
 }
