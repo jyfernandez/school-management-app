@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CreateLessonDto } from './dto/create-lesson.dto';
 import { Lesson } from './lesson.entity';
+import { CreateLessonInput } from './lesson.input';
 import { LessonRepository } from './lesson.repository';
 
 @Injectable()
@@ -11,8 +11,8 @@ export class LessonService {
     private lessonRepository: LessonRepository,
   ) {}
 
-  async createLesson(createLessonDto: CreateLessonDto): Promise<Lesson> {
-    const lesson = await this.lessonRepository.createLesson(createLessonDto);
+  async createLesson(createLessonInput: CreateLessonInput): Promise<Lesson> {
+    const lesson = await this.lessonRepository.createLesson(createLessonInput);
     return lesson;
   }
   async getLesson(id: string): Promise<Lesson> {
