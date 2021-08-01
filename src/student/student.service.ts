@@ -16,4 +16,7 @@ export class StudentService {
   getStudents(): Promise<Student[]> {
     return this.studentRepository.getStudents();
   }
+  getStudent(id: string): Promise<Student> {
+    return this.studentRepository.getStudent(id);
+  }
 }

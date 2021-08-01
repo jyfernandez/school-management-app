@@ -19,4 +19,7 @@ export class StudentRepository extends Repository<Student> {
   async getStudents(): Promise<Student[]> {
     return await this.find();
   }
+  async getStudent(id: string): Promise<Student> {
+    return await this.findOne({ id });
+  }
 }
