@@ -11,8 +11,8 @@ export class LessonService {
     private lessonRepository: LessonRepository,
   ) {}
 
-  createLesson(createLessonDto: CreateLessonDto): Promise<Lesson> {
-    const lesson = this.lessonRepository.createLesson(createLessonDto);
+  async createLesson(createLessonDto: CreateLessonDto): Promise<Lesson> {
+    const lesson = await this.lessonRepository.createLesson(createLessonDto);
     return lesson;
   }
 }
